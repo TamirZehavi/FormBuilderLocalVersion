@@ -7,6 +7,7 @@ This project consists of three components:
 - Database (MySQL)
 
 Full detail about the form builder can be found [here](https://github.com/wix-incubator/form-builder-exam#form-submit-page)
+Deployed to production version on Heroku: https://form-builder-server.herokuapp.com/
 
 # Setup
 
