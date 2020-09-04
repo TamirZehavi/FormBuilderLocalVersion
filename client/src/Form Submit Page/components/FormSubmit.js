@@ -4,6 +4,7 @@ import FieldsContainer from "./FieldsContainer";
 import SubmitButton from "./SubmitButton";
 import FieldItem from "./FieldItem";
 import {useParams, Redirect} from "react-router-dom";
+import "./FormSubmit.css";
 
 export default function FormSubmitPage() {
   axios.defaults.baseURL = "http://localhost:5000";
@@ -105,7 +106,8 @@ export default function FormSubmitPage() {
       {StatusCode === 200 ? (
         <Redirect to="/" />
       ) : (
-        <>
+        <div className="form-submit-container">
+          <h1>Submit Your Form</h1>
           <FieldsContainer
             updateValue={updateValue}
             isThereAnEpmtyInput={isThereAnEpmtyInput}
@@ -115,7 +117,7 @@ export default function FormSubmitPage() {
             handleSubmit={handleSubmit}
             submitButtonDisabled={submitButtonDisabled}
           />
-        </>
+        </div>
       )}
     </>
   );

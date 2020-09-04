@@ -5,7 +5,8 @@ import Controller from "./Controller";
 import SubmitButton from "./SubmitFormButton";
 import axios from "axios";
 import FormName from "./FormNameField";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import "./FormBuilder.css";
 
 class FormBuilder extends Component {
   constructor(props) {
@@ -57,15 +58,19 @@ class FormBuilder extends Component {
           <Redirect to="/" />
         ) : (
           <>
-            <FieldsContainer fields={this.state.fields} />
-            <Controller createNewField={this.createNewField} />
-            <br />
-            <FormName setFormName={this.setFormName} />
-            <br />
-            <SubmitButton
-              formName={this.state.formName}
-              saveFormTemplateToDB={this.saveFormTemplateToDB}
-            />
+            <div className="form-builder-container">
+              <h1>Form Builder</h1>
+              <FieldsContainer fields={this.state.fields} />
+              <Controller createNewField={this.createNewField} />
+              <br />
+              <FormName setFormName={this.setFormName} />
+              <br />
+              <SubmitButton
+                formName={this.state.formName}
+                saveFormTemplateToDB={this.saveFormTemplateToDB}
+              />
+              <Link to="/">Cancel and go back to forms list</Link>
+            </div>
           </>
         )}
       </div>

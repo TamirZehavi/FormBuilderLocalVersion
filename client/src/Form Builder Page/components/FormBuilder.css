@@ -1,0 +1,31 @@
+.form-builder-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.controller-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-top-color: azure;
+  border-top-style: groove;
+  border-bottom-color: azure;
+  border-bottom-style: groove;
+  padding: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.add-form-template-button {
+  align-items: center;
+  margin-top: 5px;
+}
+
+.form-name-field {
+  width: 15%;
+}
+
+.controller-field {
+  margin-bottom: 7px;
+}

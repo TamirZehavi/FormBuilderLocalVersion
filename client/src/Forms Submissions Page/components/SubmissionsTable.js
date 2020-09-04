@@ -36,13 +36,14 @@ export default function SubmissionsTable() {
   }, [form_id]);
 
   return (
-    <>
-      <table>
+    <div className="table-container">
+      <h1>Form Submissions Table For Form {form_id}</h1>
+      <table className="table table-dark m-2">
         <tbody>
           <HeadersContainer headers={headers} />
           <RowsContainer IDs={IDs} submissions={submissions} />
         </tbody>
       </table>
-    </>
+    </div>
   );
 }

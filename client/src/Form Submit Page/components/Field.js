@@ -14,6 +14,7 @@ export default function Field(props) {
     <>
       <label>{label}</label>
       <input
+        className="form-control"
         maxLength={inputType === "text" ? 20 : null}
         type={inputType}
         name={inputName}

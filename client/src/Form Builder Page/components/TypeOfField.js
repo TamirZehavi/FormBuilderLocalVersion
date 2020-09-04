@@ -4,8 +4,11 @@ import "bootstrap/dist/css/bootstrap.css";
 function Type(props) {
   return (
     <>
-      <label>type:</label>
-      <select className="dropdown" onChange={(e) => props.setType(e)}>
+      <label>Input Type:</label>
+      <select
+        className="dropdown form-control controller-field"
+        onChange={(e) => props.setType(e)}
+      >
         <option>tel</option>
         <option>email</option>
         <option>number</option>

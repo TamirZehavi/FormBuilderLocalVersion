@@ -2,7 +2,11 @@ import React from "react";
 
 function SubmitButton(props) {
   return (
-    <button onClick={props.handleSubmit} disabled={props.submitButtonDisabled}>
+    <button
+      className="btn btn-primary"
+      onClick={props.handleSubmit}
+      disabled={props.submitButtonDisabled}
+    >
       Submit Form
     </button>
   );

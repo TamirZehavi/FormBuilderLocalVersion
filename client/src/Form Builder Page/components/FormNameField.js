@@ -4,7 +4,11 @@ function FormName(props) {
   return (
     <>
       <label>Form Name</label>
-      <input type="text" onChange={(e) => props.setFormName(e)} />
+      <input
+        className="form-control form-name-field"
+        type="text"
+        onChange={(e) => props.setFormName(e)}
+      />
     </>
   );
 }

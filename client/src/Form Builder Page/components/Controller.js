@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Type from "./TypeOfField";
+import "bootstrap/dist/css/bootstrap.css";
 
 class Controller extends Component {
   state = {
@@ -28,8 +29,37 @@ class Controller extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="controller-container">
+          <h4>Add Fields To Your Form</h4>
+          <div>
+            <Type
+              setType={(e) => {
+                this.setType(e.target.value);
+              }}
+            />
+          </div>
+
+          <input
+            className="form-control controller-field"
+            type="text"
+            placeholder="input name here"
+            onChange={(e) => {
+              this.setInputName(e.target.value);
+            }}
+            maxLength={20}
+          />
+
+          <input
+            className="form-control controller-field"
+            type="text"
+            placeholder="label here"
+            onChange={(e) => {
+              this.setLabel(e.target.value);
+            }}
+            maxLength={20}
+          />
           <button
+            className="btn btn-primary add-form-template-button"
             onClick={() => this.props.createNewField(this.state)}
             disabled={
               (!this.state.label && !this.state.inputName) ||
@@ -39,30 +69,7 @@ class Controller extends Component {
           >
             Add Field
           </button>
-          <Type
-            setType={(e) => {
-              this.setType(e.target.value);
-            }}
-          />
         </div>
-
-        <input
-          type="text"
-          placeholder="input name here"
-          onChange={(e) => {
-            this.setInputName(e.target.value);
-          }}
-          maxLength={20}
-        />
-
-        <input
-          type="text"
-          placeholder="label here"
-          onChange={(e) => {
-            this.setLabel(e.target.value);
-          }}
-          maxLength={20}
-        />
       </div>
     );
   }
