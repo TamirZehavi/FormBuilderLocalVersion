@@ -37,10 +37,11 @@ app.get("/load_forms_list", (request, response) => {
 //insert to form templates
 app.post("/add_form_template", (request, response) => {
   const {formName, numberOfSubmissions} = request.body;
-  const values = [["NULL", formName, numberOfSubmissions]];
+  const values = [[formName, numberOfSubmissions]];
 
-  const query = "INSERT INTO form_templates (id, name, submissions) VALUES ?";
-  DB.query(query, [values], (error, results) => {
+  const query =
+    "INSERT INTO form_templates (id, name, submissions) VALUES (NULL,?)";
+  DB.query(query, values, (error, results) => {
     if (error) return response.status(404).send(error);
     else {
       return response.json(results);
@@ -50,6 +51,7 @@ app.post("/add_form_template", (request, response) => {
 
 //insert to form fields
 app.post("/add_form_fields", (request, response) => {
+  console.log(request.body);
   const values = SetFieldValues(request);
   const query =
     "INSERT INTO form_fields (field_id, form_id, field_type, field_label, input_name) VALUES ?";
@@ -66,7 +68,7 @@ function SetFieldValues(request) {
   const values = [];
   for (let field in request.body.fields) {
     const {inputType, label, inputName} = request.body.fields[field];
-    values.push(["NULL", formID, inputType, label, inputName]);
+    values.push([null, formID, inputType, label, inputName]);
   }
   return values;
 }
@@ -84,7 +86,7 @@ app.get("/load_form_fields/:formID", (request, response) => {
   });
 });
 
-//creete new user_id
+//create new user_id
 app.post("/add_user", (request, response) => {
   const query = "INSERT INTO user_id (user_id) VALUES (NULL)";
   DB.query(query, (error, results) => {
@@ -116,7 +118,7 @@ function SetSubmissionValues(request) {
     const {field_id: fieldID, form_id: formID, value} = request.body.fields[
       field
     ];
-    values.push(["NULL", userID, fieldID, formID, value]);
+    values.push([null, userID, fieldID, formID, value]);
   }
   return values;
 }
