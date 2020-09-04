@@ -4,9 +4,11 @@
 This project consists of three components:
 - Server side written with NodeJS
 - Client written with ReactJS
-- Database (MySQL)
+- Database (MySQL, Server version: 10.4.11-MariaDB)
 
 Full detail about the form builder can be found [here](https://github.com/wix-incubator/form-builder-exam#form-submit-page)
+
+Deployed to production version on Heroku: https://form-builder-server.herokuapp.com/
 
 # Setup
 
