@@ -83,7 +83,7 @@ $ node app.js
 
 #### Step 3: Client
 
-- Navigate to the client folder (FormBuilderLocalVersion - master/client), and run the following commands:
+- Open a new terminal. Navigate to the client folder (FormBuilderLocalVersion - master/client), and run the following commands:
 ```sh
 $ npm install
 $ npm start
