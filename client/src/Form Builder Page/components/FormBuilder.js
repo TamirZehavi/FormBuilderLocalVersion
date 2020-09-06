@@ -13,6 +13,8 @@ class FormBuilder extends Component {
     super(props);
     this.state = {
       formID: null,
+      fieldsLimit: 10,
+      moreThanOneEmail: false,
       formName: "",
       fields: [],
       redirect: false,
@@ -23,9 +25,28 @@ class FormBuilder extends Component {
     this.setState({formName: e.target.value});
   };
 
+  validate = (newField) => {
+    const {fieldsLimit, fields, moreThanOneEmail} = this.state;
+    if (newField.inputType === "email") {
+      if (moreThanOneEmail) {
+        alert("Only one email is allowed");
+        return false;
+      } else {
+        this.setState({moreThanOneEmail: true});
+      }
+    }
+    if (fields.length === fieldsLimit) {
+      alert(`${fieldsLimit} fields tops`);
+      return false;
+    }
+    return true;
+  };
+
   createNewField = (newField) => {
-    let fields = [...this.state.fields, newField];
-    this.setState({fields});
+    if (this.validate(newField)) {
+      let fields = [...this.state.fields, newField];
+      this.setState({fields});
+    }
   };
 
   saveFormTemplateToDB = () => {
@@ -57,7 +78,7 @@ class FormBuilder extends Component {
         {this.state.redirect ? (
           <Redirect to="/" />
         ) : (
-          <>
+          <div className="all-container">
             <div className="form-builder-container">
               <h1>Form Builder</h1>
               <FieldsContainer fields={this.state.fields} />
@@ -71,7 +92,7 @@ class FormBuilder extends Component {
               />
               <Link to="/">Cancel and go back to forms list</Link>
             </div>
-          </>
+          </div>
         )}
       </div>
     );

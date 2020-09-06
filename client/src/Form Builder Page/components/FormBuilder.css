@@ -1,7 +1,16 @@
+.all-container {
+  display: flex;
+  justify-content: center;
+}
+
 .form-builder-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  background-color: rgb(39, 41, 59, 0.85);
+  width: 30%;
+  color: white;
 }
 
 .controller-container {
@@ -23,7 +32,7 @@
 }
 
 .form-name-field {
-  width: 15%;
+  width: 50%;
 }
 
 .controller-field {

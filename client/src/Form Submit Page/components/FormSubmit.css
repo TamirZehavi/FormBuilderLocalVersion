@@ -1,5 +1,14 @@
+.all-container {
+  display: flex;
+  justify-content: center;
+}
+
 .form-submit-container {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: rgb(39, 41, 59, 0.85);
+  width: 30%;
+  color: white;
+  padding: 15px;
 }

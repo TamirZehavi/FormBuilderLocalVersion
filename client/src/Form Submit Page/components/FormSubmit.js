@@ -106,17 +106,19 @@ export default function FormSubmitPage() {
       {StatusCode === 200 ? (
         <Redirect to="/" />
       ) : (
-        <div className="form-submit-container">
-          <h1>Submit Your Form</h1>
-          <FieldsContainer
-            updateValue={updateValue}
-            isThereAnEpmtyInput={isThereAnEpmtyInput}
-            fields={fields}
-          />
-          <SubmitButton
-            handleSubmit={handleSubmit}
-            submitButtonDisabled={submitButtonDisabled}
-          />
+        <div className="all-container">
+          <div className="form-submit-container">
+            <h1>Submit Your Form</h1>
+            <FieldsContainer
+              updateValue={updateValue}
+              isThereAnEpmtyInput={isThereAnEpmtyInput}
+              fields={fields}
+            />
+            <SubmitButton
+              handleSubmit={handleSubmit}
+              submitButtonDisabled={submitButtonDisabled}
+            />
+          </div>
         </div>
       )}
     </>

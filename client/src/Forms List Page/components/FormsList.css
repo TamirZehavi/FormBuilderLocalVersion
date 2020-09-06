@@ -12,3 +12,8 @@
 .forms-list-title {
   margin-left: 20px;
 }
+
+body {
+  background-image: url("./Pictures/22624_adventure_time.jpg");
+  background-size: cover;
+}
