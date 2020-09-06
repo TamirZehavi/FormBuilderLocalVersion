@@ -4,7 +4,7 @@
 This project consists of three components:
 - Server side written with NodeJS
 - Client written with ReactJS
-- Database (MySQL, Server version: 10.4.11-MariaDB)
+- Database (MySQL 8, Server version: 10.4.11-MariaDB)
 
 Full detail about the form builder can be found [here](https://github.com/wix-incubator/form-builder-exam#form-submit-page)
 
@@ -18,9 +18,14 @@ Deployed to production version on Heroku: https://form-builder-server.herokuapp.
 - Optional: Use [DataGrip](https://www.jetbrains.com/datagrip/) to manage database
 
 #### Step 1: Database
+IMPORTANT NOTE: Credentials for my Google Cloud database are provided in the 'connection.js' file. If you wish to connect to my database, you can skip this step. 
 
 - Create a MySQL database with a server of your choice (i.e XAMPP),  and connect to it
-- Once you've done so, create the 4 tables with the following queries: 
+- The database/schema can be created with the following query:
+```sh
+CREATE SCHEMA DummyName;
+```
+- Once you've done so, in your schema, create the 4 tables with the following queries: 
 ```sh
 CREATE TABLE `form_fields` (
   `field_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -62,7 +67,7 @@ CREATE TABLE `user_id` (
 ```sh
 $ npm install
 ```
-- Inside 'connection.js' file, enter the database's credentials like so:
+- Inside 'connection.js' file, enter the database's credentials like so: (skip this if you want to use my Google Cloud database)
 ```sh
 const db = mysql.createConnection({
   host: "<ExampleHost>",
@@ -73,12 +78,12 @@ const db = mysql.createConnection({
 ```
 - In the terminal run the following command to start the server:
 ```sh
-$ nodemon
+$ node app.js
 ```
 
 #### Step 3: Client
 
-- Navigate to the client folder (FormBuilderLocalVersion - master/client), and run the following commands:
+- Open a new terminal. Navigate to the client folder (FormBuilderLocalVersion - master/client), and run the following commands:
 ```sh
 $ npm install
 $ npm start
