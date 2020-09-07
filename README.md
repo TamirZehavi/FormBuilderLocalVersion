@@ -12,7 +12,7 @@ Deployed to production version on Heroku: https://form-builder-server.herokuapp.
 
 # Setup
 
-#### prerequisites
+#### Prerequisites
 - node v12.18.3
 - MySQL database 
 - Optional: Use [DataGrip](https://www.jetbrains.com/datagrip/) to manage database
