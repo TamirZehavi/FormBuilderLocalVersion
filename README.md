@@ -18,7 +18,6 @@ Deployed to production version on Heroku: https://form-builder-server.herokuapp.
 - Optional: Use [DataGrip](https://www.jetbrains.com/datagrip/) to manage database
 
 #### Step 1: Database
-IMPORTANT NOTE: Credentials for my Google Cloud database are provided in the 'connection.js' file. If you wish to connect to my database, you can skip this step. 
 
 - Create a MySQL database with a server of your choice (i.e XAMPP),  and connect to it
 - The database/schema can be created with the following query:
