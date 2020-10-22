@@ -66,7 +66,7 @@ CREATE TABLE `user_id` (
 ```sh
 $ npm install
 ```
-- Inside 'connection.js' file, enter the database's credentials like so: (skip this if you want to use my Google Cloud database)
+- Inside 'connection.js' file, enter the database's credentials like so: 
 ```sh
 const db = mysql.createConnection({
   host: "<ExampleHost>",
